@@ -7,18 +7,14 @@ public class TakeDamageOnCollision : MonoBehaviour
 {
 
     public EnemyHealth EnemyHealth;
-
     public UnityEvent EventOnTakeDamageEnemy;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.rigidbody)
+        if (collision.relativeVelocity.magnitude > 0)
         {
-            if (collision.rigidbody.GetComponent<IsThrowed>() && collision.relativeVelocity.magnitude > 0)
-            {
-                EventOnTakeDamageEnemy.Invoke();
-                EnemyHealth.TakeDamage(1);
-            }
-        }
+            EventOnTakeDamageEnemy.Invoke();
+            EnemyHealth.TakeDamage(1);
+        }  
     }
 }
