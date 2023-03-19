@@ -41,16 +41,16 @@ public class ChunkPlacer : MonoBehaviour
         List<float> chances = new List<float>();
         for (int i = 0; i < ChunkPrefabs.Length; i++)
         {
-            chances.Add(ChunkPrefabs[i].ChanceFromDistance.Evaluate(Player.transform.position.z));
+            //chances.Add(ChunkPrefabs[i].ChanceFromDistance.Evaluate(Player.transform.position.z));
         }
 
-        float value = Random.Range(0, chances.Sum());
+       // float value = Random.Range(0, chances.Sum());
         float sum = 0;
 
         for (int i = 0; i < chances.Count; i++)
         {
             sum += chances[i];
-            if (value < sum)
+           // if (value < sum)
             {
                 return ChunkPrefabs[i];
             }

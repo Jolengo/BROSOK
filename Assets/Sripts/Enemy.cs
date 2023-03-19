@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
 
     public EnemyState CurrentEnemyState;
 
-    public int Health;
+    public int Health = 1;
     public GameObject Player;
     public float DistanceToFollow = 7f;
 
@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         _distanceToAttack = NavMeshAgent.stoppingDistance;
+        Player = FindObjectOfType<PlayerMove>().gameObject;
     }
 
     // Update is called once per frame

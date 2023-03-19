@@ -1,0 +1,556 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &320800784081586032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320800784081586038}
+  - component: {fileID: 320800784081586033}
+  m_Layer: 0
+  m_Name: DieEffectSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &320800784081586038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320800784081586032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 320800784226128647}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &320800784081586033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320800784081586032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e917848e5c95edc4dbc35a97f3d0779e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 6925342296747996178, guid: 9ffe48a418cc48641991ae1ef1afdc01, type: 3}
+  Spawn: {fileID: 320800784081586038}
+--- !u!1 &320800784226128640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320800784226128647}
+  - component: {fileID: 320800784226128646}
+  - component: {fileID: 320800784226128641}
+  m_Layer: 0
+  m_Name: Enemy (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &320800784226128647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320800784226128640}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000058114523}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 286277507680406325}
+  - {fileID: 320800784081586038}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!195 &320800784226128646
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320800784226128640}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 270
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &320800784226128641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320800784226128640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3843020686a78245bb21d58b66fd822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 1
+  DieEffect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 320800784081586033}
+        m_TargetAssemblyTypeName: PrefabCreator, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1001 &320800784415780062
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 320800784226128647}
+    m_Modifications:
+    - target: {fileID: -8963838772662979419, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:Neck
+      objectReference: {fileID: 0}
+    - target: {fileID: -8872901015089156540, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandRing2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8783367958070073711, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandPinky4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8780213641772795459, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandThumb2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8736460841961231590, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandThumb2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8483848724794987956, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:Spine1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8384036029753768912, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandRing1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8233139922611589016, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandThumb3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7797374828588892722, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandIndex1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7575618620551751497, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandIndex2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7048734780007370785, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandPinky2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6695152440451956162, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandPinky2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6596814765625448730, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHand
+      objectReference: {fileID: 0}
+    - target: {fileID: -6565322176914316192, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandIndex3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5676452786596628870, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftToeBase
+      objectReference: {fileID: 0}
+    - target: {fileID: -5495872648014194988, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandRing3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5330396503150727318, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftArm
+      objectReference: {fileID: 0}
+    - target: {fileID: -4606771787588935181, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandThumb4
+      objectReference: {fileID: 0}
+    - target: {fileID: -4128758960675898974, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandThumb4
+      objectReference: {fileID: 0}
+    - target: {fileID: -4081288207617742497, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:Spine2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3910646966724643146, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftFoot
+      objectReference: {fileID: 0}
+    - target: {fileID: -3698079849845502399, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftShoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: -3403833032413042186, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightArm
+      objectReference: {fileID: 0}
+    - target: {fileID: -2931849986402684217, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandThumb1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2391929886388230589, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHand
+      objectReference: {fileID: 0}
+    - target: {fileID: -2351772649148110180, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:HeadTop_End
+      objectReference: {fileID: 0}
+    - target: {fileID: -2221122144127732805, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightUpLeg
+      objectReference: {fileID: 0}
+    - target: {fileID: -2006996206229482360, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandThumb1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1941713416402416376, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandMiddle4
+      objectReference: {fileID: 0}
+    - target: {fileID: -1874577639621256114, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:Head
+      objectReference: {fileID: 0}
+    - target: {fileID: -1714575494947810239, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandPinky1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1093405066771845557, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:Spine
+      objectReference: {fileID: 0}
+    - target: {fileID: -1013663672092288027, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightToe_End
+      objectReference: {fileID: 0}
+    - target: {fileID: -629329997435182354, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:Hips
+      objectReference: {fileID: 0}
+    - target: {fileID: 287920651979985708, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandIndex1
+      objectReference: {fileID: 0}
+    - target: {fileID: 690135268028923995, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftToe_End
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: Mannequin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394855428349472772, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftForeArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489366218997785709, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandMiddle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2147838682180349513, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandPinky1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347590648523274797, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandIndex4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933806742072276168, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightFoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3147449358897310659, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandRing1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393603914447760379, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandIndex2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407094179604459225, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: Ch20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3536647468581835364, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandPinky3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3810737116329451712, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightShoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104728091122532628, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161684067726595482, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandPinky4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296659071866407058, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightForeArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367552079072665920, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandThumb3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586904102137857012, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandIndex4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727918168281034690, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandPinky3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816233648767135615, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftUpLeg
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455818923742610052, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandMiddle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130386592158015027, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandRing2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261142157564711518, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandIndex3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350752951157539647, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightLeg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6914101378320460271, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftLeg
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280921291777002176, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandRing4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7552353350238270818, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandMiddle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880622770632711353, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098845709543856374, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightToeBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 8603177742186240415, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandRing3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8690854524031113373, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandMiddle4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907810762739395697, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:RightHandMiddle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081628324164313385, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+      propertyPath: m_Name
+      value: mixamorig6:LeftHandRing4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+--- !u!4 &286277507680406325 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+  m_PrefabInstance: {fileID: 320800784415780062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &626808819875959183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+  m_PrefabInstance: {fileID: 320800784415780062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &320800784415780061
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626808819875959183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 1.75, z: 0.75}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!95 &320800784415780048
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626808819875959183}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25ad1f484a61a0a4caa3d387d531ca53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &320800784415780050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626808819875959183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2df79b9be51c214786fc409cf3974ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentEnemyState: 0
+  Health: 0
+  Player: {fileID: 0}
+  DistanceToFollow: 10
+  NavMeshAgent: {fileID: 320800784226128646}
+  EnemyAnimator: {fileID: 320800784415780048}
+--- !u!114 &320800784415780051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626808819875959183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e435777ce23b5447bf6457ac49a33b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyHealth: {fileID: 320800784226128641}
+  EventOnTakeDamageEnemy:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &3115321645034308103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3407094179604459225, guid: b0a40f4ca55574c40a97ee26efd76e6d, type: 3}
+  m_PrefabInstance: {fileID: 320800784415780062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &320800785054330056
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115321645034308103}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f963d0d54ced13b458f4ca75e8211b45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
