@@ -16,30 +16,40 @@ public class Enemy : MonoBehaviour
 
     public EnemyState CurrentEnemyState;
 
-    public int Health;
+    public int Health = 1;
     public GameObject Player;
     public float DistanceToFollow = 7f;
-    public float DistanceToAttack = 1f;
 
     public NavMeshAgent NavMeshAgent;
-
     public Animator EnemyAnimator;
 
-    // Update is called once per frame
-    void Update()
-    {
-        FindPlayer();
-        if (CurrentEnemyState == EnemyState.Idle)
-        {
+    private float _distanceToAttack = 1f;
 
-        }
-        else if (CurrentEnemyState == EnemyState.WalkToPlayer)
+    private void Start()
+    {
+        _distanceToAttack = NavMeshAgent.stoppingDistance;
+        Player = FindObjectOfType<PlayerMove>().gameObject;
+    }
+
+    // Update is called once per frame
+    void LateUpdate()
+    {
+
+        if (!EnemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            FindPlayer();
+
+        Vector3 Direction = Player.transform.position - transform.position;
+        Direction.Set(Direction.x, 0f, Direction.z);
+        transform.rotation = Quaternion.LookRotation(Direction);
+
+        if (CurrentEnemyState == EnemyState.WalkToPlayer)
         {
             NavMeshAgent.SetDestination(Player.transform.position);
+            EnemyAnimator.SetBool("Walk", true);
         }
-        else if (CurrentEnemyState == EnemyState.Attack)
+        if (CurrentEnemyState == EnemyState.Attack)
         {
-
+            EnemyAnimator.SetBool("Attack", true);
         }
     }
 
@@ -55,21 +65,20 @@ public class Enemy : MonoBehaviour
         float distance = Vector3.Distance(transform.position, Player.transform.position);
 
         EnemyAnimator.SetBool("Walk", false);
+        EnemyAnimator.SetBool("Attack", false);
 
         if (distance < minDistance)
             minDistance = distance;
 
         if (minDistance < DistanceToFollow)
         {
-            if (minDistance < DistanceToAttack)
+            if (minDistance <= _distanceToAttack)
             {
                 SetState(EnemyState.Attack);
-                EnemyAnimator.SetTrigger("Attack");
             }
-            else
+            else 
             {
                 SetState(EnemyState.WalkToPlayer);
-                EnemyAnimator.SetBool("Walk", true);
             }
         }
         else
@@ -85,7 +94,7 @@ public class Enemy : MonoBehaviour
         if (distance < minDistance)
             minDistance = distance;
 
-        if (minDistance < DistanceToAttack)
+        if (minDistance < _distanceToAttack)
         {
             Player.GetComponent<PlayerHealth>().TakeDamage(1);
         }

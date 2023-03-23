@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
         DieEffect.Invoke();
+        Destroy(gameObject);
     }
 }
